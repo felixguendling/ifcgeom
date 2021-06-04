@@ -1,12 +1,12 @@
 [express2cpp]
   branch=master
   url=git@github.com:baumhaus-project/express2cpp.git
-  commit=b54fbedff54cc23efd3bd44a028371b35b875816
+  commit=368d61ff9ef53f817835fd92ac5c731787a9322b
 [doctest]
   url=git@github.com:motis-project/doctest.git
   branch=master
   commit=eca5f41304b95786888e6f5ffff6fdd2b23ba3e2
 [cinder]
-  url=git@github.com:cinder/Cinder.git
+  url=git@github.com:felixguendling/Cinder.git
   branch=master
-  commit=636a5351bd5852cb5f2e435ff1649f860643f6df
+  commit=ea8333f415b23c4a92e4620ffb9e337ac1bdc146
