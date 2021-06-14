@@ -6,7 +6,7 @@
   url=git@github.com:motis-project/doctest.git
   branch=master
   commit=eca5f41304b95786888e6f5ffff6fdd2b23ba3e2
-[cinder]
-  url=git@github.com:felixguendling/Cinder.git
+[magnum]
+  url=git@github.com:felixguendling/magnum.git
   branch=master
-  commit=ea8333f415b23c4a92e4620ffb9e337ac1bdc146
+  commit=8439cb792b3af9a878591186596e2f0c406b0897
