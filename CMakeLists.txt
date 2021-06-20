@@ -1,13 +1,27 @@
 cmake_minimum_required(VERSION 3.16)
 project(ifcgeom)
 
-set(OpenGL_GL_PREFERENCE "GLVND")
+set(WITH_SDL2APPLICATION ON CACHE BOOL "" FORCE)
 
-add_subdirectory(deps)
-#include(cmake/pkg.cmake)
+include(cmake/pkg.cmake)
 
-#express2cpp(IFC4.exp ifc)
-express2cpp(IFC2X3.exp ifc)
+file(GLOB_RECURSE ifcgeom-render-files exe/main.cc)
+add_executable(render ${ifcgeom-render-files})
+target_link_libraries(render PRIVATE
+  Corrade::Main
+  MagnumSdl2Application
+  MagnumGL
+  MagnumMeshTools
+  MagnumPrimitives
+  MagnumShaders
+  MagnumSceneGraph)
+target_compile_features(render PUBLIC cxx_std_20)
+
+
+if (false)
+
+express2cpp(IFC4.exp ifc4)
+express2cpp(IFC2X3.exp ifc2x3)
 
 file(GLOB_RECURSE ifcgeom-files src/*.cc)
 add_library(ifcgeom ${ifcgeom-files})
@@ -24,3 +38,5 @@ file(GLOB_RECURSE ifcgeom-test-files test/*.cc)
 add_executable(ifcgeom-test ${ifcgeom-test-files})
 target_compile_features(ifcgeom PUBLIC cxx_std_20)
 target_link_libraries(ifcgeom-test ifcgeom doctest)
+
+endif()
